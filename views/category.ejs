@@ -1,0 +1,62 @@
+<!-- @format -->
+
+<%- include('layout/header'); -%>
+<div class="container">
+  <div class="card mt-5 mb-4">
+    <h5 class="card-header">Categories</h5>
+    <div class="table-responsive text-nowrap">
+      <table class="table">
+        <thead>
+          <tr class="text-nowrap">
+            <th>#</th>
+            <th>Name</th>
+            <th>isActive</th>
+            <th>isDelete</th>
+            <th>Description</th>
+            <th>createdAt</th>
+            <th>updatedAt</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <% categories.forEach(function(category){ %>
+            console.log(category)
+          <tr>
+            <th scope="row"><%category.id></th>
+            <td>Men</td>
+            <td><span class="badge bg-label-success me-1">True</span></td>
+            <td><span class="badge bg-label-danger me-1">False</span></td>
+            <td>Products for men</td>
+            <td>Table cell</td>
+            <td>Table cell</td>
+            <td><i class="bx bx-edit bg-label-warning me-3"></i><i class="bx bx-x-circle bg-label-danger"></i></td>
+          </tr>
+          <% }); %> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card mb-4">
+    <h5 class="card-header">Add new category</h5>
+    <div class="card-body">
+      <form action="#">
+        <div class="mb-3">
+          <label for="FormControlName" class="form-label">Name:</label>
+          <input type="text" class="form-control" id="FormControlName" placeholder="Category name" />
+        </div>
+        <div class="mb-3">
+          <label for="FormControlImage" class="form-label">URL Image:</label>
+          <input type="text" class="form-control" id="FormControlImage" placeholder="https://image.com/...." />
+        </div>
+        <div class="mb-3">
+          <label for="FormControlDescription" class="form-label">Description</label>
+          <textarea class="form-control" id="FormControlDescription" rows="3"></textarea>
+        </div>
+        <div>
+          <button type="button" class="btn btn-primary">Add new category</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('layout/footer'); -%>
