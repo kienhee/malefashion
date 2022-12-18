@@ -1,0 +1,102 @@
+<div class="card mt-5 mb-4">
+  <h5 class="card-header">Products</h5>
+  <div class="table-responsive text-nowrap">
+    <table class="table">
+      <thead>
+        <tr class="text-nowrap">
+          <th>#</th>
+          <th>Name</th>
+          <th>thumnail</th>
+          <th>isActive</th>
+          <th>Description</th>
+          <th>categoryId</th>
+          <th>price</th>
+          <th>discount</th>
+          <th>createdAt</th>
+          <th>updatedAt</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% products.forEach(function(product){ %>
+        <tr>
+          <th scope="row"><%= product.id %></th>
+          <td><%= product.name %></td>
+          <td><%= product.thumnail %></td>
+          <td><span class="badge bg-label-success me-1">Active</span></td>
+
+          <td><%= product.description %></td>
+          <td><%= product.productId %></td>
+          <td><%= product.price %></td>
+          <td><%= product.discount  %></td>
+          <td><%=  moment(product.createdAt).format('LT-DD/MM/YYYY') %></td>
+          <td><%=  moment(product.updatedAt).format('LT-DD/MM/YYYY') %></td>
+          <td >
+            <i
+              class="bx bx-edit text-warning "
+              data-bs-toggle="modal"
+              data-bs-target="#modalCenter-<%= product.id %>"
+            >
+          </td>
+        </tr>
+        <form action="category/update-category/<%= product.id %>" method="post">
+          <div class="modal fade" id="modalCenter-<%= product.id %>" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalCenterTitle">Edit Category</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <label for="nameWithTitle" class="form-label">Name</label>
+                    <input
+                      type="text"
+                      id="nameWithTitle"
+                      class="form-control"
+                      placeholder="Enter Name"
+                      name="name"
+                      value="<%= product.name %>"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="nameWithTitle" class="form-label">URL IMAGE:</label>
+                    <input
+                      type="text"
+                      id="nameWithTitle"
+                      class="form-control"
+                      placeholder="Enter Name"
+                      name="image"
+                      value="<%= product.image %>"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="FormControlActive" class="form-label">SELECT</label>
+                    <select class="form-select" id="FormControlActive" value="<%= product.isActive %>" name="isActive">
+                      <option value="1">Active</option>
+                      <option value="0">Off</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="FormControlDescription" class="form-label">Description</label>
+                    <textarea class="form-control" id="FormControlDescription" rows="3" name="description">
+                    <%= product.description %></textarea
+                    >
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+  let 
+</script>

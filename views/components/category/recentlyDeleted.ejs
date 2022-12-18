@@ -1,0 +1,65 @@
+<!-- @format -->
+
+<div class="card mt-5 mb-4">
+  <h5 class="card-header">Categories OFF</h5>
+  <div class="table-responsive text-nowrap">
+    <table class="table">
+      <thead>
+        <tr class="text-nowrap">
+          <th>#</th>
+          <th>Name</th>
+          <th>isActive</th>
+          <th>Description</th>
+          <!-- <th>createdAt</th>
+          <th>updatedAt</th> -->
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <% categories.forEach(function(category){ %>
+        <tr>
+          <th scope="row"><%= category.id %></th>
+          <td><%= category.name %></td>
+          <td><span class="badge bg-label-danger me-1">OFF</span></td>
+          <td><%= category.description %></td>
+          <!-- <td><%= category.createdAt %></td>
+          <td><%= category.updatedAt %></td> -->
+          <td><i class="bx bx-x-circle text-danger" data-bs-toggle="modal" data-bs-target="#modal-dialog-<%= category.id %>"></i></td>
+        </tr>
+       <form action="/category/recently-deleted/<%= category.id %>" method="post">
+         <div
+          class="modal fade"
+          id="modal-dialog-<%= category.id %>"
+          aria-labelledby="modalToggleLabel"
+          tabindex="-1"
+          style="display: none"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalToggleLabel">Warning!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">This action can't be undone (id <%= category.id %>) </div>
+              <div class="modal-footer">
+                <button
+                  class="btn btn-secondary"
+                  data-bs-target="#modalToggle2"
+                  data-bs-toggle="modal"
+                  data-bs-dismiss="modal"
+                >
+                  Cancel
+                </button>
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+       </form>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</div>

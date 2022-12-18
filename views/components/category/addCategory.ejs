@@ -1,0 +1,24 @@
+<!-- @format -->
+
+<div class="card mb-4">
+  <h5 class="card-header">Add new category</h5>
+  <div class="card-body">
+    <form action="/api/v1/category/add-new-category" method="post">
+      <div class="mb-3">
+        <label for="FormControlName" class="form-label">Name:</label>
+        <input type="text" class="form-control" id="FormControlName" placeholder="Category name" name="name" />
+      </div>
+      <div class="mb-3">
+        <label for="FormControlImage" class="form-label">URL Image:</label>
+        <input type="text" class="form-control" id="FormControlImage" placeholder="https://image.com/...." name="image"/>
+      </div>
+      <div class="mb-3">
+        <label for="FormControlDescription" class="form-label">Description</label>
+        <textarea class="form-control" id="FormControlDescription" rows="3" name="description"></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary">Add new category</button>
+      </div>
+    </form>
+  </div>
+</div>

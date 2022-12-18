@@ -22,7 +22,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="http://localhost:3000/images/favicon/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,28 +31,37 @@
       href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"
+      integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="stylesheets/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="stylesheets/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="stylesheets/demo.css" />
+    <link rel="stylesheet" href="http://localhost:3000/stylesheets/core.css" class="template-customizer-core-css" />
+    <link
+      rel="stylesheet"
+      href="http://localhost:3000/stylesheets/theme-default.css"
+      class="template-customizer-theme-css"
+    />
+    <link rel="stylesheet" href="http://localhost:3000/stylesheets/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="http://localhost:3000/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-    <link rel="stylesheet" href="libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="http://localhost:3000/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="javascripts/helpers.js"></script>
+    <script src="http://localhost:3000/javascripts/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="javascripts/config.js"></script>
+    <script src="http://localhost:3000/javascripts/config.js"></script>
   </head>
 
   <body>
@@ -63,7 +72,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
+            <a href="/" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <svg
                   width="25"
@@ -132,17 +141,48 @@
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
             <li class="menu-item active">
-              <a href="index.html" class="menu-link">
+              <a href="/" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
             <!-- Layouts -->
             <li class="menu-item">
-              <a href="/category" class="menu-link">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon bx bx-category"></i>
                 <div data-i18n="Layouts">Category</div>
               </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="/category" class="menu-link">
+                    <div data-i18n="Overview">Overview</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="/category/recently-deleted" class="menu-link">
+                    <div data-i18n="Recently Deleted">Recently Deleted</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- San pham -->
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon bx bx-category"></i>
+                <div data-i18n="Layouts">List of products</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="/product/list-product" class="menu-link">
+                    <div data-i18n="Overview">Overview</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="/product/add-new-product" class="menu-link">
+                    <div data-i18n="Add products">Add products</div>
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
         </aside>
@@ -178,24 +218,10 @@
               <!-- /Search -->
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
-                <!-- Place this tag where you want the button to render. -->
-                <li class="nav-item lh-1 me-3">
-                  <a
-                    class="github-button"
-                    href="https://github.com/themeselection/sneat-html-admin-template-free"
-                    data-icon="octicon-star"
-                    data-size="large"
-                    data-show-count="true"
-                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                    >Star</a
-                  >
-                </li>
-
-                <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="images/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="http://localhost:3000/images/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -204,7 +230,11 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="images/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img
+                                src="http://localhost:3000/images/avatars/1.png"
+                                alt
+                                class="w-px-40 h-auto rounded-circle"
+                              />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -256,5 +286,4 @@
           <!-- / Navbar -->
           <!-- Content wrapper -->
           <div class="content-wrapper">
-            <!-- Content -->
- 
+   
